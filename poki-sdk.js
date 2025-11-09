@@ -77,9 +77,21 @@
 	})), ["setDebug", "gameplayStart", "gameplayStop", "gameLoadingProgress", "happyTime", "setPlayerAge", "togglePlayerAdvertisingConsent", "logError", "sendHighscore", "setDebugTouchOverlayController"].forEach((function(e) {
 		window.PokiSDK[e] = t.oneArgument(e)
 	}));
-	var o, i = ((o = window.pokiSDKVersion) || (o = e("ab") || "v2.263.0"), "/poki-sdk-" + (n ? "kids" : "core") + "-" + o + ".js"),
-		r = document.createElement("script");
-	r.setAttribute("src", i), r.setAttribute("type", "text/javascript"), r.setAttribute("crossOrigin", "anonymous"), r.onload = function() {
+	var o = window.pokiSDKVersion || e("ab") || "v2.263.0",
+		r = document.currentScript;
+	if (!r) {
+		var a = document.getElementsByTagName("script");
+		r = a[a.length - 1] || null
+	}
+	var c = "";
+	if (r && r.src) {
+		var s = new URL(r.src, window.location.href);
+		c = s.href.slice(0, s.href.lastIndexOf("/") + 1)
+	} else
+		c = new URL("./", window.location.href).href;
+	var i = c + "poki-sdk-" + (n ? "kids" : "core") + "-" + o + ".js",
+		u = document.createElement("script");
+	u.setAttribute("src", i), u.setAttribute("type", "text/javascript"), u.setAttribute("crossOrigin", "anonymous"), u.onload = function() {
 		return t.dequeue()
-	}, document.head.appendChild(r)
+	}, document.head.appendChild(u)
 })();
