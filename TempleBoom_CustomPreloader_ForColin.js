@@ -93772,7 +93772,7 @@ $jscomp.polyfill("String.prototype.includes", function(ma) {
                 this._document = window.document;
                 this._unsafeWindow = this._document.defaultView;
                 this.loader = this._document.createElement("script");
-                this.loader.src = "/poki-sdk.js";
+                this.loader.src = "poki-sdk.js";
                 this._document.head.insertBefore(this.loader, this._document.head.getElementsByTagName("script")[0]);
                 this.tl = this._document.createElement("script");
 
