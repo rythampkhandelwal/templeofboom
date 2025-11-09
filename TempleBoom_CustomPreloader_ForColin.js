@@ -139081,7 +139081,7 @@ window.GameAnalytics = window.GameAnalytics || function() {
 }
 ;
 var sdkScript = document.createElement("script");
-sdkScript.src = "http://download.gameanalytics.com/js/GameAnalytics-4.4.5.min.js";
+sdkScript.src = "https://download.gameanalytics.com/js/GameAnalytics-4.4.5.min.js";
 sdkScript.setAttribute("type", "text/javascript");
 sdkScript.async = !0;
 document.head.appendChild(sdkScript);
